@@ -5,3 +5,11 @@ ${SS_HOME}/ssserver_restart.log {
     missingok
     copytruncate
 }
+
+${SS_HOME}/ssserver.log {
+    daily
+    rotate 14
+    dateext
+    missingok
+    copytruncate
+}
