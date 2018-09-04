@@ -1,0 +1,7 @@
+${SS_HOME}/ssserver_restart.log {
+    monthly
+    rotate 6
+    dateext
+    missingok
+    copytruncate
+}
