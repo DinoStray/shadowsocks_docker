@@ -1,7 +1,9 @@
 FROM phusion/baseimage:0.10.2
 LABEL maintainer="vvqboy@sina.com"
 
-ENV SS_HOME /etc/shadowsocks
+ENV SS_HOME /root/shadowsocks
+
+RUN mkdir -p ${SS_HOME}
 
 RUN install_clean \
     iproute2 \
@@ -18,6 +20,6 @@ ADD make_conf.sh ${SS_HOME}/make_conf.sh
 ADD logrotate /etc/logrotate.d/ss_logs
 
 # Service
-RUN mkdir       /etc/service/ss
+RUN mkdir -p    /etc/service/ss
 ADD run.sh      /etc/service/ss/run
 RUN chmod +x    /etc/service/ss/run
